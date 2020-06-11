@@ -21,7 +21,7 @@
     "@angular/router": "~8.2.14",
     "bootstrap": "^4.4.0",
     "html2canvas": "^1.0.0-rc.5",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jspdf": "^1.5.3",
     "ng2-dragula": "^2.1.1",
     "rxjs": "~6.4.0",

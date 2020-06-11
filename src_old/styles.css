@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Lato;
+    backgroud-color:grey;
+    color: #ddd;
+  }
+
+/* in-flight clone */
+.gu-mirror {
+    position: fixed !important;
+    margin: 0 !important;
+    z-index: 9999 !important;
+    opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    pointer-events: none;
+  }
+  /* high-performance display:none; helper */
+  .gu-hide {
+    left: -9999px !important;
+  }
+  /* added to mirrorContainer (default = body) while dragging */
+  .gu-unselectable {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+  }
+  /* added to the source element while its mirror is dragged */
+  .gu-transit {
+    opacity: 0.2;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+  }
+  html,body,.container{
+    height:100%
+  }
+  /* .container div:nth-child(1){
+    height: 10%;
+  }
+  .container div:nth-child(3){
+    height: 10%;
+  } */
+  .container > app-workarea > div:nth-child(1n){
+    height: 80%;
+  }
+  .container div:nth-child(2n)>.main{
+    height:100%
+  }
+  #right{
+height: 90%;
+  }
+  .grow {
+    flex: 1;
+}
+
+.main {
+    overflow-y: auto;
+}
+.brdr{
+  border-left:1px solid grey
+}

@@ -1,0 +1,17 @@
+
+<div class="container">
+  <div class="row grow w-100 bg-primary py-3">
+    <div class="main col-9">FormName</div>
+    <div class="main col-3">Language</div>
+  </div>
+  <div class="row w-100 bg-danger">
+    <div class="col-12 ovrflw" id="btnGrp" style="padding:0.3%">
+      <input type="button" value="view-1"(click)="setActiveView($event);" class="active" name="View"/>
+      <button (click)="addView($event)" name="View">+</button>
+    </div>
+  </div>
+  <ng-container *ngFor="let view of TotalView;let i=index;trackBy:index">
+      <!-- [hidden]="i !== selectedView" -->
+      <app-workarea [hidden]="i !== selectedView" [index]="i" (messageEvent)="receiveMessage($event)" [computedAttributes]="Attributes" #child></app-workarea>
+  </ng-container>
+</div>

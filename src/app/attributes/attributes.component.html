@@ -1,0 +1,117 @@
+<h4 class="col-12" style="border-bottom:1px solid grey">
+        <span>Attribute</span>
+        <a (click)="remove($event)" [hidden] = "showRemove()" style="float:right;font-size: 17px;margin-top: 7px;color: #ed3f69;cursor:pointer">Remove</a>
+    </h4>
+    <div class="col-12" *ngFor='let attr of activeAttributes;let i=index;trackBy:i;'>
+        <div *ngIf="attr.typeName === 'Label'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="text" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" placeholder="{{attr.defaultValue}}"
+            />
+        </div>
+        <div *ngIf="attr.typeName === 'background-color'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="color" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" />
+        </div>
+        <div *ngIf="attr.typeName === 'margin-left'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="number" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" min="0"
+            />
+        </div>
+        <div *ngIf="attr.typeName === 'margin-top'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="number" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" min="0"
+            />
+        </div>
+        <div *ngIf="attr.typeName === 'margin-right'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="number" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" min="0"
+            />
+        </div>
+        <div *ngIf="attr.typeName === 'margin-bottom'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="number" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" min="0"
+            />
+        </div>
+        <div *ngIf="attr.typeName === 'color'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="color" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" min="0"
+            />
+        </div>
+    
+        <div *ngIf="attr.typeName === 'font-size'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="number" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" min="0"
+            />
+        </div>
+        <div *ngIf="attr.typeName === 'BG Layout'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="color" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" />
+        </div>
+        <div *ngIf="attr.typeName === 'height'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="number" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" min="0"
+            />
+        </div>
+        <div *ngIf="attr.typeName === 'width'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="number" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" min="0"
+            />
+        </div>
+        <div *ngIf="attr.typeName === 'Column No'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="number" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" min="0"
+            />
+        </div>
+        <div *ngIf="attr.typeName === 'Column Span'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="number" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" min="0"
+            />
+        </div>
+        <div *ngIf="attr.typeName === 'Row Span'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="number" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" min="0"
+            />
+        </div>
+        <div *ngIf="attr.typeName === 'Default Value'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="color" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" />
+        </div>
+        <div *ngIf="attr.typeName === 'Read Only'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="checkbox" name="Read Only" [ngModel]="false" (ngModelChange)="updateWorkArea($event, attr)">
+        </div>
+        <div *ngIf="attr.typeName === 'Multiline'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="checkbox" name="Multiline" [ngModel]="false" (ngModelChange)="updateWorkArea($event, attr)" />
+        </div>
+        <div *ngIf="attr.typeName === 'Header Name'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="text" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" placeholder="{{attr.defaultValue}}"/>
+        </div>
+        <div *ngIf="attr.typeName === 'Columns'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="number" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" placeholder="{{attr.defaultValue}}"/>
+        </div>
+        <div *ngIf="attr.typeName === 'IS Skippable'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="checkbox" name="Multiline" [ngModel]="false" (ngModelChange)="updateWorkArea($event, attr)" />
+        </div>
+        <div *ngIf="attr.typeName === 'View Name'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="text" [ngModel]="attr.defaultValue" (ngModelChange)="updateWorkArea($event, attr)" class="col-md-6" placeholder="{{attr.defaultValue}}"/>
+        </div>
+        <div *ngIf="attr.typeName === 'Orientation'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <select>
+                <option></option>
+            </select>
+        </div>
+        <div *ngIf="attr.typeName === 'Capture Geo Location'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="checkbox" name="Multiline" [ngModel]="false" (ngModelChange)="updateWorkArea($event, attr)" />
+        </div>
+        <div *ngIf="attr.typeName === 'Show Welcome Message'" class="row" style="align-items: center;">
+            <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+            <input type="checkbox" name="Multiline" [ngModel]="false" (ngModelChange)="updateWorkArea($event, attr)" />
+        </div>
+    </div>

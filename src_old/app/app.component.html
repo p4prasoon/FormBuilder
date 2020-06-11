@@ -1,0 +1,119 @@
+<!-- <div class="flex">
+  <h6>Tools</h6>
+  <div class="container" dragula="VAMPIRES" [(dragulaModel)]="vamps" id="left">
+      
+    <div class="vamp" *ngFor="let vamp of vamps">{{ vamp.name }}</div>
+  </div>
+<h6>WorkSpace</h6>
+  <div class="container" dragula="VAMPIRES" [(dragulaModel)]="droppedItems" id="right">
+      
+    <div class="vamp" *ngFor="let type of droppedItems; let i = index;">
+        <div *ngIf="type.name == 'Text'">
+            <label class="" id="Text">Enter Text</label>
+            <Input type="text" placeholder='Text' name="text" ngDefaultControl
+              class="form-control input-sm" />
+          </div>
+          <div *ngIf="type.name == 'Numeric Text'">
+            <label class="" id="Number">Number</label>
+            <Input type="number" placeholder='Text' name="text" ngDefaultControl
+              class="form-control input-sm" />
+          </div>
+          <div *ngIf="type.name == 'Dropdown List'">
+            <label class="" id="Dropdown List">Dropdown List</label>
+            <select class="form-control input-sm" name="dropdown">
+              <option value="">select</option>
+            </select>
+          </div>
+          <div *ngIf="type.name == 'Checkbox'">
+            <label class="" id="Checkbox">Checkbox</label>
+            <input type = "checkbox" name="checkbox"/>
+          </div>
+          <div *ngIf="type.name == 'Photograph'">
+            <label class="" id="Photograph">Photograph</label>
+            <div *ngIf="defaultmobileLogoPath" class="imgDiv">
+              <img [src]="defaultmobileLogoPath">
+            </div>
+          </div>
+          <div *ngIf="type.name == 'Rating'">
+            <label class="" id="Rating">Rating</label>
+          </div>
+          <div *ngIf="type.name == 'Separator'">
+            <label class="" id="Separator">Separator</label>
+          </div>
+          <div *ngIf="type.name == 'Audio'">
+            <label class="" id="Audio">Audio</label>
+          </div>
+          <div *ngIf="type.name == 'Video'">
+            <label class="" id="Video">Video</label>
+          </div>
+          <div *ngIf="type.name == 'Feedback'">
+            <label class="" id="Feedback">Feedback</label>
+          </div>
+          <div *ngIf="type.name == 'Barcode'">
+            <label class="" id="Barcode">Barcode</label>
+          </div>
+          <div *ngIf="type.name == 'Richtextbox'">
+            <label class="" id="Richtextbox">Richtextbox</label>
+          </div>
+          <div *ngIf="type.name == 'Geo Location'">
+            <label class="" id="Geo Location">Geo Location</label>
+          </div>
+          <div *ngIf="type.name == 'Additional Action'">
+            <label class="" id="Additional Action">Additional Action</label>
+          </div>
+          <div *ngIf="type.name == 'Fetch Details'">
+            <label class="" id="Fetch Details">Fetch Details</label>
+          </div>
+          <div *ngIf="type.name == 'Fingerprint'">
+            <label class="" id="Fingerprint">Finger Print</label>
+          </div>
+          <div *ngIf="type.name == 'Attachments'">
+            <label class="" id="Attachments">Attachments</label>
+          </div>
+    </div>
+  </div>
+  <div class="container">
+    <h6>Attributes</h6>
+  </div>
+</div> -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-9">FormName</div>
+    <div class="col-3">Language</div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <h1 class="row">ToolBox</h1>
+      <div class="row">
+
+      </div>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+    <div class="col-md-3">
+
+    </div>
+  </div>
+  <div class="row">
+
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row grow w-100 bg-primary py-3">
+    <div class="main col-9">FormName</div>
+    <div class="main col-3">Language</div>
+  </div>
+  <ng-container *ngFor="let view of TotalView;let i=index;">
+      <app-workarea [hidden]="i !== selectedView" [index]="i"></app-workarea>
+  </ng-container>
+
+  <div class="row w-100 ovrflw">
+    <div class="col-12 py-3 bg-danger" id="btnGrp">
+      <input type="button" value="view-1"(click)="setActiveView($event)"/>
+      <button (click)="addView()">+</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+.grow {
+    flex: 1;
+}
+
+.main {
+    overflow-y: auto;
+}
+.brdr{
+  border-left:1px solid grey
+}
+.ovrflw{
+  overflow-x: auto;
+  white-space: nowrap;
+  height: 10%;
+  overflow-y: hidden;
+  /* display: flex; */
+  line-height: 1;
+}

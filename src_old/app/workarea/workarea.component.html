@@ -1,0 +1,146 @@
+<div class="row grow w-100"> 
+    <div class="col-3 bg-info py-3" style="overflow-y:auto;height:100%">
+      <h4 class="col-12" style="border-bottom:1px solid grey">ToolBox{{index}}</h4>
+      <div class="row" dragula="VAMPIRES{{index}}" [(dragulaModel)]="vamps" id="left">
+        <span class="vamp col-12" *ngFor="let vamp of vamps">{{ vamp.name }}</span>
+      </div>
+    </div>
+    <div class="main col-6 bg-warning h-100 py-3 brdr">
+      <h4 class="col-12" style="border-bottom:1px solid grey">WorkSpace</h4>
+      <div class="col-12" dragula="VAMPIRES{{index}}" [(dragulaModel)]="droppedItems" id="right">
+        <div class="vamp" *ngFor="let type of droppedItems; let i = index;">
+          <div *ngIf="type.name == 'Text'">
+            <label class="" id="Text">Enter Text</label>
+            <Input type="text" placeholder='Text' name="text" ngDefaultControl class="form-control input-sm" />
+          </div>
+          <div *ngIf="type.name == 'Numeric Text'">
+            <label class="" id="Number">Number</label>
+            <Input type="number" placeholder='Text' name="text" ngDefaultControl class="form-control input-sm" min="0" />
+          </div>
+          <div *ngIf="type.name == 'Dropdown List'">
+            <label class="" id="Dropdown List">Dropdown List</label>
+            <select class="form-control input-sm" name="dropdown">
+                    <option value="">select</option>
+                  </select>
+          </div>
+          <div *ngIf="type.name == 'Checkbox'">
+            <label class="" id="Checkbox">Checkbox</label>
+            <input type="checkbox" name="checkbox" />
+          </div>
+          <div *ngIf="type.name == 'Photograph'">
+            <label class="" id="Photograph">Photograph</label>
+            <div *ngIf="defaultmobileLogoPath" class="imgDiv">
+              <img [src]="defaultmobileLogoPath">
+            </div>
+          </div>
+          <div *ngIf="type.name == 'Rating'">
+            <label class="" id="Rating">Rating</label>
+          </div>
+          <div *ngIf="type.name == 'Separator'">
+            <label class="" id="Separator">Separator</label>
+          </div>
+          <div *ngIf="type.name == 'Audio'">
+            <label class="" id="Audio">Audio</label>
+          </div>
+          <div *ngIf="type.name == 'Video'">
+            <label class="" id="Video">Video</label>
+          </div>
+          <div *ngIf="type.name == 'Feedback'">
+            <label class="" id="Feedback">Feedback</label>
+          </div>
+          <div *ngIf="type.name == 'Barcode'">
+            <label class="" id="Barcode">Barcode</label>
+          </div>
+          <div *ngIf="type.name == 'Richtextbox'">
+            <label class="" id="Richtextbox">Richtextbox</label>
+          </div>
+          <div *ngIf="type.name == 'Geo Location'">
+            <label class="" id="Geo Location">Geo Location</label>
+          </div>
+          <div *ngIf="type.name == 'Additional Action'">
+            <label class="" id="Additional Action">Additional Action</label>
+          </div>
+          <div *ngIf="type.name == 'Fetch Details'">
+            <label class="" id="Fetch Details">Fetch Details</label>
+          </div>
+          <div *ngIf="type.name == 'Fingerprint'">
+            <label class="" id="Fingerprint">Finger Print</label>
+          </div>
+          <div *ngIf="type.name == 'Attachments'">
+            <label class="" id="Attachments">Attachments</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main col-3 bg-warning h-100 py-3 brdr">
+      <h4 class="col-12" style="border-bottom:1px solid grey">Attribute</h4>
+      <div class="col-12" *ngFor = 'let attr of selectedAttributes;'>
+   <!-- {{attr.typeName}} -->
+   <div *ngIf="attr.typeName === 'BG Color'" class="row">
+     <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+     <input type="color" [value]="attr.defaultValue" class="col-md-6"/>
+   </div>
+   <div *ngIf="attr.typeName === 'Margin Left'" class="row">
+    <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+    <input type="number" [value]="attr.defaultValue" class="col-md-6" min="0"/>
+  </div>
+  <div *ngIf="attr.typeName === 'Margin Top'" class="row">
+    <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+    <input type="number" [value]="attr.defaultValue" class="col-md-6" min="0"/>
+  </div>
+  <div *ngIf="attr.typeName === 'Margin Right'" class="row">
+    <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+    <input type="number" [value]="attr.defaultValue" class="col-md-6" min="0"/>
+  </div>
+  <div *ngIf="attr.typeName === 'Margin Bottom'" class="row">
+    <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+    <input type="number" [value]="attr.defaultValue" class="col-md-6" min="0"/>
+  </div>
+  <div *ngIf="attr.typeName === 'Text Color'" class="row">
+    <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+    <input type="color" [value]="attr.defaultValue" class="col-md-6" min="0"/>
+  </div>
+
+  <div *ngIf="attr.typeName === 'Text Size'" class="row">
+    <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+    <input type="number" [value]="attr.defaultValue" class="col-md-6" min="0"/>
+  </div>
+  <div *ngIf="attr.typeName === 'BG Layout'" class="row">
+    <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+    <!-- <input type="color" [value]="attr.defaultValue" class="col-md-6"/> -->
+  </div>
+  <div *ngIf="attr.typeName === 'Height'" class="row">
+    <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+    <input type="number" [value]="attr.defaultValue" class="col-md-6" min="0"/>
+  </div>
+  <div *ngIf="attr.typeName === 'Width'" class="row">
+    <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+    <input type="number" [value]="attr.defaultValue" class="col-md-6" min="0"/>
+  </div>
+  <div *ngIf="attr.typeName === 'Column No'" class="row">
+    <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+    <input type="number" [value]="attr.defaultValue" class="col-md-6" min="0"/>
+  </div>
+  <div *ngIf="attr.typeName === 'Column Span'" class="row">
+    <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+    <input type="number" [value]="attr.defaultValue" class="col-md-6" min="0"/>
+  </div>
+  <div *ngIf="attr.typeName === 'Row Span'" class="row">
+    <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+    <input type="number" [value]="attr.defaultValue" class="col-md-6" min="0"/>
+  </div>
+  <div *ngIf="attr.typeName === 'Default Value'" class="row">
+    <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+    <!-- <input type="color" [value]="attr.defaultValue" class="col-md-6"/> -->
+  </div>
+  <div *ngIf="attr.typeName === 'Read Only'" class="row">
+    <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+    <input type="checkbox" name="Read Only" value="false">
+  </div>
+  <div *ngIf="attr.typeName === 'Multiline'" class="row">
+    <label for="attr.typeName" class="col-md-6">{{attr.typeName}}</label>
+    <input type="checkbox" name="Multiline" value="false">
+  </div>
+      </div>
+    </div>
+  </div>

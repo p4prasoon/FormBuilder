@@ -1,0 +1,65 @@
+<form dragula="VAMPIRES{{index}}" [(dragulaModel)]="droppedItems" id="right" style="box-shadow: grey 2px 2px 2px 2px;overflow-x:auto;">
+    <div class="col-12" *ngFor="let type of droppedItems; let i = index;">
+        <div *ngIf="type.name == 'Text'" [id]="type.UID" (click)="showAttribute('text',$event)" [ngStyle]="type.style" class="row">
+            <label class="col-6">Enter Text</label>
+            <Input type="text" placeholder='Text' name="text" ngDefaultControl class="col-6 form-control input-sm" />
+        </div>
+        <div *ngIf="type.name == 'Numeric Text'" [id]="type.UID" (click)="showAttribute('number',$event)" [ngStyle]="type.style"
+            class="row">
+            <label class="col-6" id="Number">Number</label>
+            <Input type="number" placeholder='Text' name="text" ngDefaultControl class="form-control input-sm col-6" min="0" />
+        </div>
+        <div *ngIf="type.name == 'Dropdown List'" [id]="type.UID" (click)="showAttribute('dropdown')" class="row">
+            <label class="col-6" id="Dropdown List">Dropdown List</label>
+            <select class="form-control input-sm col-6" name="dropdown">
+                    <option value="">select</option>
+                  </select>
+        </div>
+        <div *ngIf="type.name == 'Checkbox'" [id]="type.UID" (click)="showAttribute('checkbox')" class="row">
+            <label class="col-6" id="Checkbox">Checkbox</label>
+            <input type="checkbox" name="checkbox" class="col-6" />
+        </div>
+        <div *ngIf="type.name == 'Photograph'" [id]="type.UID" (click)="showAttribute('photograph')" class="row">
+            <label class="col-6" id="Photograph">Photograph</label>
+            <div *ngIf="defaultmobileLogoPath" class="imgDiv col-6">
+                <img [src]="defaultmobileLogoPath">
+            </div>
+        </div>
+        <div *ngIf="type.name == 'Rating'" [id]="type.UID" (click)="showAttribute('Rating')" class="row">
+            <label class="col-6" id="Rating">Rating</label>
+        </div>
+        <div *ngIf="type.name == 'Separator'" [id]="type.UID" (click)="showAttribute('seperator')" class="row">
+            <label class="col-6" id="Separator">Separator</label>
+        </div>
+        <div *ngIf="type.name == 'Audio'" [id]="type.UID" (click)="showAttribute('audio')" class="row">
+            <label class="col-6" id="Audio">Audio</label>
+        </div>
+        <div *ngIf="type.name == 'Video'" [id]="type.UID" (click)="showAttribute('video')" class="row">
+            <label class="col-6" id="Video">Video</label>
+        </div>
+        <div *ngIf="type.name == 'Feedback'" [id]="type.UID" (click)="showAttribute('feedback')" class="row">
+            <label class="col-6" id="Feedback">Feedback</label>
+        </div>
+        <div *ngIf="type.name == 'Barcode'" [id]="type.UID" (click)="showAttribute('barcode')" class="row">
+            <label class="col-6" id="Barcode">Barcode</label>
+        </div>
+        <div *ngIf="type.name == 'Richtextbox'" [id]="type.UID" (click)="showAttribute('richtextbox')" class="row">
+            <label class="col-6" id="Richtextbox">Richtextbox</label>
+        </div>
+        <div *ngIf="type.name == 'Geo Location'" [id]="type.UID" (click)="showAttribute('geolocation')" class="row">
+            <label class="col-6" id="Geo Location">Geo Location</label>
+        </div>
+        <div *ngIf="type.name == 'Additional Action'" [id]="type.UID" (click)="showAttribute('additionalaction')" class="row">
+            <label class="col-6" id="Additional Action">Additional Action</label>
+        </div>
+        <div *ngIf="type.name == 'Fetch Details'" [id]="type.UID" (click)="showAttribute('fetchdetails')" class="row">
+            <label class="col-6" id="Fetch Details">Fetch Details</label>
+        </div>
+        <div *ngIf="type.name == 'Fingerprint'" [id]="type.UID" (click)="showAttribute('fingerprint')" class="row">
+            <label class="col-6" id="Fingerprint">Finger Print</label>
+        </div>
+        <div *ngIf="type.name == 'Attachments'" [id]="type.UID" (click)="showAttribute('attachments',id)" class="row">
+            <label class="col-6" id="Attachments">Attachments</label>
+        </div>
+    </div>
+</form>

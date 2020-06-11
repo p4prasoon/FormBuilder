@@ -1,0 +1,11 @@
+.fixed{
+    position: fixed;
+  }
+  .field {
+    padding: 5px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.field:hover {
+    box-shadow: 1px 1px 4px #ddd;
+}
